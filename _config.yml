@@ -29,7 +29,7 @@ force-https: True
 #############
 
 lang: "cn"
-author: "vainglorycn"
+author: "vainglorycn" 
 title: "虚荣实验室"
 description: "虚荣Vainglory"
 keywords: "VG"
