@@ -33,7 +33,7 @@ author: "vainglorycn"
 title: "虚荣实验室"
 description: "虚荣Vainglory"
 keywords: "VG"
-favicon: "/img/favicon.ico"
+favicon: "/img/favicon.ico" 
 
 ################
 # Header layout #
