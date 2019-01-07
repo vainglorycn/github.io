@@ -1,0 +1,25 @@
+
+<!-- Swipe Instructions Start -->
+
+<div id="swipe-instruction">
+  <div>
+    <p><br><br><br></p>
+    <i id="hand-swipe" class="fa fa-hand-o-up"></i>
+    <p><strong>
+    {% if page.section-type == "blog" %}
+      您是否知道可以通过向左和向右滑动来浏览存档页面？
+    {% elsif page.section-type == "post" %}
+      您是否知道可以通过向左和向右滑动来浏览帖子？
+    {% endif %}
+    </strong></p>
+    <button type="button" class="btn btn-default ok-btn close-swipe-instruction">
+      {% if page.section-type == "blog" %}
+        Got it!
+      {% elsif page.section-type == "post" %}
+        Awesome!
+      {% endif %}
+    </button>
+  </div>
+</div>
+
+<!-- Swipe Instructions End -->

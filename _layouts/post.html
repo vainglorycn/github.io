@@ -1,0 +1,93 @@
+
+<!-- Post Layout Start -->
+
+<!DOCTYPE html>
+<html lang="{{ site.lang }}">
+  {% include head.html %}
+
+  <body>
+    {% include navigation.html %}
+
+    <section id="post" class="container content-section text-center">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+          {% include swipe-instructions.html %}
+
+          <h1><strong>{{ page.title }}</strong></h1>
+          <h4>
+            <strong>{{ page.date | date_to_string }}</strong>
+            <small>
+              . 类别:
+              <!-- <a class="category" href="{{site.baseurl}}/categories/{{page.category | downcase}}.html"> -->
+                {{ page.category }}
+              <!-- </a>. -->
+              <!-- <a href="{{site.baseurl}}{{page.url }}#disqus_thread">Comments</a> -->
+              <br />
+              {% for tag in page.tags %}
+                #{{ tag }}
+                <!-- <a class="tag" href="{{site.baseurl}}/tags/{{tag | downcase}}.html">#{{ tag }}</a> -->
+              {% endfor %}
+            </small>
+          </h4>
+
+          <section class="text-justify">
+            {{ page.content | markdownify }}
+            
+          </section>
+
+          {% include share.html %}
+
+          {% if jekyll.environment == "production" %}
+            {% include comments.html %}
+          {% endif %}
+          {% if page.comments %} {% endif %}
+
+
+          <hr />
+
+          {% if site.author_blurb %}
+          <div class="author row">
+            <img class="col-xs-4 col-sm-3 col-md-2" src="{{site.baseurl}}{{site.author_blurb_image}}" alt="Me" />
+            <p class="col-xs-8 col-sm-9 col-md-10">
+              {{ site.author_blurb }}
+            </p>
+          </div>
+          {% endif%}
+        </div>
+        {% if page.comments %} {% endif %}
+      </div>
+    </section>
+
+    <!-- <div id="disqus_thread"></div> -->
+    <!-- <script>
+
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://jaychoubaby.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//jaychoubaby.disqus.com/count.js" async></script>
+                             -->
+                                                  
+
+    {% include footer.html %}
+
+    {% include js.html %} 
+    
+  </body>
+</html>
+
+<!-- Post Layout End -->
